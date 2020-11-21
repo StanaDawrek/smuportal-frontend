@@ -18,5 +18,10 @@
     "appName": "Admin Dashboard",
     "iconUrl": "users.png",
     "path": "/apps/admin"
-  }
+  },
+  {
+    "appName": "Book Management System",
+    "iconUrl": "book.png",
+    "path": "/apps/bms"
+}
 ]
