@@ -1,6 +1,10 @@
 export interface Book {
-    _id: string;
-    Title: string;
-    Author: string;
-    ISBN: string;
+    Title: String;
+    Author: String;
+    ISBN: Number;
+    description: String;
+    publishDate: Date;
+    pageCount: Number;
+    createdAt: Date;
+    NumberOfCopies: Number;
   }

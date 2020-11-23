@@ -29,9 +29,8 @@ export class ListBooksComponent implements OnInit, OnDestroy {
   goToAdd() {
     this.router.navigate(["/apps/bms/add"]);
   }
-  deleteBook(bookISBN: string) {
+  deleteBook(bookISBN: Number) {
     this.bmsService.deleteBook(bookISBN);
     this.bookRemoved.next(true);
-    
   }
 }
