@@ -6,6 +6,7 @@ import {ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListBooksComponent } from './list-books/list-books.component';
 import { BmsMainPageComponent } from './bms-main-page/bms-main-page.component';
 import { BmsAddBookComponent } from './bms-add-book/bms-add-book.component';
+import { BmsReserveBookComponent } from './bms-reserve-book/bms-reserve-book.component';
 
 const routes: Routes = [
   {
@@ -19,10 +20,14 @@ const routes: Routes = [
   {
     path: "add",
     component: BmsAddBookComponent
+  },
+  {
+    path: "reserve",
+    component: BmsReserveBookComponent
   }
 ];
 @NgModule({
-  declarations: [ListBooksComponent, BmsMainPageComponent, BmsAddBookComponent],
+  declarations: [ListBooksComponent, BmsMainPageComponent, BmsAddBookComponent, BmsReserveBookComponent],
   imports: [
     CommonModule,
     SharedModule,

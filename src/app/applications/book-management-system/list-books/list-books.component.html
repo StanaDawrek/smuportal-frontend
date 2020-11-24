@@ -48,3 +48,54 @@
   </div>
 
 </div>
+<br>
+<div class="container-fluid">
+  <div class="row justify-content-center mt-5 h-100">
+    <div class="col-6 text-center">
+      <div class="main-header">
+        <h2>Reservation Management System</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<ng-container *ngIf="this.reservationRemoved | async">
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    The Reservation Has Been Successfully Removed.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</ng-container>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">StartDate</th>
+        <th scope="col">EndDate</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let Reservation of listOfReservation | async; let i = index;">
+        <tr>
+          <th scope="row">{{i}}</th>
+          <td>{{Reservation.StartDate}}</td>
+          <td>{{Reservation.EndDate}}</td>
+          <td>{{Reservation.ISBN}}</td>
+          <td><button type="button" class="btn btn-danger" 
+          (click)="deleteReservation(Reservation.ISBN)">Delete</button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-success" 
+    (click)="goToReserve()"> Reserve</button>
+  </div>
+
+</div>
