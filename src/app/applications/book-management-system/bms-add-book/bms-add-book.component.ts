@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder} from '@angular/forms'
 import { Router} from '@angular/router';
 import { BmsService, Book } from '@app/shared';
+import { NgbDatepickerDayView } from '@ng-bootstrap/ng-bootstrap/datepicker/datepicker.module';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -20,9 +21,9 @@ export class BmsAddBookComponent implements OnInit, OnDestroy{
       Author: "",
       ISBN: 0,
       description: "",
-      publishDate: null,
+      publishDate: Date.now,
       pageCount: 0,
-      createdAt: null,
+      createdAt: Date.now,
       NumberOfCopies: 0,
     })
   }

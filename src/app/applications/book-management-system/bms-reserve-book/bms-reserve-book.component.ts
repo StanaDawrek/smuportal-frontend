@@ -17,8 +17,8 @@ export class BmsReserveBookComponent implements OnInit,OnDestroy {
   constructor(private formBuilder: FormBuilder, private bmsService: BmsService,
    private router: Router) {
     this.reservationForm = this.formBuilder.group({
-     startDay: null,
-     endDay:null,
+     startDay: Date.now,
+     endDay:Date.now,
      ISBN:0
     })
   }
