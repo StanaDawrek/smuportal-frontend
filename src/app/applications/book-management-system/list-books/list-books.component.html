@@ -73,8 +73,8 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">StartDate</th>
-        <th scope="col">EndDate</th>
+        <th scope="col">startDay</th>
+        <th scope="col">endDay</th>
         <th scope="col">ISBN</th>
         <th scope="col">Action</th>
       </tr>
@@ -83,8 +83,8 @@
       <ng-container *ngFor="let Reservation of listOfReservation | async; let i = index;">
         <tr>
           <th scope="row">{{i}}</th>
-          <td>{{Reservation.StartDate}}</td>
-          <td>{{Reservation.EndDate}}</td>
+          <td>{{Reservation.startDay}}</td>
+          <td>{{Reservation.endDay}}</td>
           <td>{{Reservation.ISBN}}</td>
           <td><button type="button" class="btn btn-danger" 
           (click)="deleteReservation(Reservation.ISBN)">Delete</button>
