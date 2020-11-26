@@ -20,6 +20,11 @@
     "path": "/apps/admin"
   },
   {
+    "appName": "Library Management System",
+    "iconUrl": "book.png",
+    "path": "/apps/lms"
+  },
+  {
     "appName": "Book Management System",
     "iconUrl": "book.png",
     "path": "/apps/bms"

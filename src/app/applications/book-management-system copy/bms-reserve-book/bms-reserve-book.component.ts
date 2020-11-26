@@ -35,7 +35,7 @@ export class BmsReserveBookComponent implements OnInit,OnDestroy {
   }
 
   goBack() {
-    this.router.navigate(["/apps/bms"]);
+    this.router.navigate(["/apps/lms"]);
   }
 
 }

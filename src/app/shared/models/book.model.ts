@@ -3,6 +3,7 @@ export interface Book {
     Author: String;
     ISBN: Number;
     description: String;
+    category:String;
     publishDate: Date;
     pageCount: Number;
     createdAt: Date;

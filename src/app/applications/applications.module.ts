@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 const routes: Routes = [
   {
@@ -12,17 +13,23 @@ const routes: Routes = [
           )
       },
       {
-        path: "bms", loadChildren: () =>
-          import("./book-management-system/book-management-system.module").then(
+        path: "lms", loadChildren: () =>
+          import("./book-management-system copy/book-management-system.module").then(
             m => m.BookManagementSystemModule
+          )
+      },
+      {
+        path: "lms/bookmanagement", loadChildren: () =>
+          import("./book-management/book-management.module").then(
+            m => m.BookManagementModule
           )
       },
     ]
   }
 ];
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  declarations: [routingComponents],
+  imports: [CommonModule, RouterModule.forChild(routes),AppRoutingModule],
   exports: [RouterModule]
 })
 export class ApplicationsModule { }

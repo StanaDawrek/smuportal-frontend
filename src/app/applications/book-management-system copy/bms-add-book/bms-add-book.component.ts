@@ -21,6 +21,7 @@ export class BmsAddBookComponent implements OnInit, OnDestroy{
       Author: "",
       ISBN: 0,
       description: "",
+      category:"",
       publishDate: Date.now,
       pageCount: 0,
       createdAt: Date.now,
@@ -40,6 +41,6 @@ export class BmsAddBookComponent implements OnInit, OnDestroy{
   }
 
   goBack() {
-    this.router.navigate(["/apps/bms"]);
+    this.router.navigate(["/apps/lms"]);
   }
 }

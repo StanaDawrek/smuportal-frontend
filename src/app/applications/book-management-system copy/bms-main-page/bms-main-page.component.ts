@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BmsMainPageComponent implements OnInit {
 
+  myimage1:String ="assets/images/1.jpg";
+  myimage2:String ="assets/images/2.jpg"
+
   constructor() { }
 
   ngOnInit() {
