@@ -1,3 +1,4 @@
+
 <ng-container *ngIf="this.bookRemoved | async">
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       The Book Has Been Successfully Removed.
@@ -62,5 +63,42 @@
       <button type="button" class="btn btn-success" 
       (click)="goToAdd()">Add Book</button>
     </div>
+    <div class="container-fluid">
+      <div class="row justify-content-center mt-5 h-100">
+        <div class="col-6 text-center">
+          <div class="main-header">
+            <h2>All Reservations</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">startDay</th>
+          <th scope="col">endDay</th>
+          <th scope="col">ISBN</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let Reservation of listOfReservation | async; let i = index;">
+          <tr>
+            <th scope="row">{{i}}</th>
+            <td>{{Reservation.startDay}}</td>
+            <td>{{Reservation.endDay}}</td>
+            <td>{{Reservation.ISBN}}</td>
+            <td><button type="button" class="btn btn-danger" 
+            (click)="deleteReservation(Reservation.ISBN)">Delete</button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  
+  </div>
   
   

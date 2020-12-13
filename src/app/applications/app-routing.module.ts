@@ -4,10 +4,12 @@ import { BookManagementComponent } from './book-management/book-management.compo
 import { SeatsManagementComponent } from './seats-management/seats-management.component';
 import {DetailsBookComponent} from './details-book/details-book.component';
 
+
+
 const routes: Routes = [
     {path:'bookmanagement', component: BookManagementComponent},
     {path:'seatsmanagement', component: SeatsManagementComponent},
-    {path:'detailsbook', component: DetailsBookComponent}
+    {path: `detailsbook`, component: DetailsBookComponent}
     
 ];
 

@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder} from '@angular/forms'
 import { Router} from '@angular/router';
 import { BmsService, Book } from '@app/shared';
-import { NgbDatepickerDayView } from '@ng-bootstrap/ng-bootstrap/datepicker/datepicker.module';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({

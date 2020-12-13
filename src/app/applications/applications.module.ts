@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import {BookManagementComponent} from '../applications/book-management/book-management.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,7 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [routingComponents],
+  declarations: [BookManagementComponent,routingComponents],
   imports: [CommonModule, RouterModule.forChild(routes),AppRoutingModule],
   exports: [RouterModule]
 })

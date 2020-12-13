@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {BookManagementComponent} from '../applications/book-management/book-management.component';
 @Component({
   selector: 'app-application',
   templateUrl: './application.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private BookManagementComponent: ApplicationComponent) { }
 
   ngOnInit() {
   }

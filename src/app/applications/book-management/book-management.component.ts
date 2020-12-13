@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import {BmsService} from "app/shared/services/bms.service";
 import { Book, reservation } from "@app/shared/models";
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -8,6 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './book-management.component.html',
   styleUrls: ['./book-management.component.css']
 })
+@Input()
 export class BookManagementComponent implements OnInit {
   listOfBooks: BehaviorSubject<Book[]> = new BehaviorSubject<Book[]>([]);
   bookRemoved: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -38,6 +39,10 @@ export class BookManagementComponent implements OnInit {
     this.bmsService.deleteBook(bookISBN);
     this.bookRemoved.next(true);
   }
+  //getbookbyISBN(bookISBN: Number){
+    //this.router.navigateByUrl("/detailsbook/");
+  ///}
+
   goToReserve() {
     this.router.navigate(["/apps/lms/reserve"]);
   }

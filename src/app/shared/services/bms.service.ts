@@ -16,6 +16,9 @@ export class BmsService {
   getBooks(): Observable<Book[]> {
     return this.httpClient.get<Book[]>("http://localhost:3000/api/user/getBooks");
   }
+  getBooksbyISBN(bookISBN: Number):  Observable<Book[]> {
+    return this.httpClient.get<Book[]>(`http://localhost:3000/api/user/getBooksbyISBN/${bookISBN}`);
+  }
   addBook(book: Book): void {
     this.httpClient.post<any>("http://localhost:3000/api/user/addBook", book)
 
@@ -45,6 +48,16 @@ deleteBook(bookISBN: Number): void {
  })
 }
 
+getbookbyISBN(bookISBN: Number): void{
+  this.httpClient.get<any>(`http://localhost:3000/api/user/getBooksbyISBN/${bookISBN}`).subscribe({
+    next:(data: any) => {
+      console.log(data);
+      this.getbookbyID(bookISBN);
+    },
+    error: (data: any) => console.log(data)
+  })
+}
+
 private deleteBookByID(bookISBN: Number) {
   const books: Book[] = this.listOfBooks.getValue();
   books.forEach((book, index) => {
@@ -52,6 +65,13 @@ private deleteBookByID(bookISBN: Number) {
   })
   this.listOfBooks.next(books);
  }
+private getbookbyID(bookISBN: Number){
+  const books: Book[] = this.listOfBooks.getValue();
+  books.forEach((book, index) => {
+    if(book.ISBN === bookISBN) {books.splice(index, 1);}
+  })
+  this.listOfBooks.next(books);
+} 
 
 getReservation(): Observable<reservation[]> {
     return this.httpClient.get<reservation[]>("http://localhost:3000/api/user/getReservations");

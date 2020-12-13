@@ -39,6 +39,10 @@ export class DetailsBookComponent implements OnInit {
     this.bmsService.deleteBook(bookISBN);
     this.bookRemoved.next(true);
   }
+  getBooksbyISBN(bookISBN: Number){
+    this.bmsService.getBooksbyISBN(bookISBN);
+  }
+
   goToReserve() {
     this.router.navigate(["/apps/lms/reserve"]);
   }
