@@ -3,6 +3,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import {BookManagementComponent} from '../applications/book-management/book-management.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 const routes: Routes = [
   {
@@ -30,7 +32,7 @@ const routes: Routes = [
 ];
 @NgModule({
   declarations: [BookManagementComponent,routingComponents],
-  imports: [CommonModule, RouterModule.forChild(routes),AppRoutingModule],
+  imports: [CommonModule, RouterModule.forChild(routes),AppRoutingModule,ReactiveFormsModule],
   exports: [RouterModule]
 })
 export class ApplicationsModule { }

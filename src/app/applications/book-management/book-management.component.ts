@@ -16,6 +16,7 @@ export class BookManagementComponent implements OnInit {
   listOfReservation: BehaviorSubject<reservation[]> = new BehaviorSubject<reservation[]>([]);
   reservationRemoved: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+  
   constructor(private bmsService: BmsService, private router: Router) { 
   }
   ngOnInit() {
@@ -51,3 +52,4 @@ export class BookManagementComponent implements OnInit {
     this.reservationRemoved.next(true);
   }
 }
+

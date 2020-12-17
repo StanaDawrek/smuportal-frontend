@@ -4,6 +4,7 @@ import { Router} from '@angular/router';
 import { BmsService, Book } from '@app/shared';
 import { BehaviorSubject } from 'rxjs';
 
+
 @Component({
   selector: 'app-bms-add-book',
   templateUrl: './bms-add-book.component.html',
@@ -12,6 +13,8 @@ import { BehaviorSubject } from 'rxjs';
 export class BmsAddBookComponent implements OnInit, OnDestroy{
   bookForm: any;
   bookAdded: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+
 
   constructor(private formBuilder: FormBuilder, private bmsService: BmsService,
    private router: Router) {
@@ -24,12 +27,16 @@ export class BmsAddBookComponent implements OnInit, OnDestroy{
       publishDate: Date.now,
       pageCount: 0,
       createdAt: Date.now,
-      NumberOfCopies: 0,
+      NumberOfCopies: 0
+     
     })
   }
 
   ngOnInit() {
+   
   }
+ 
+
   ngOnDestroy() {
   }
   onSubmit(book: Book) {
@@ -37,6 +44,7 @@ export class BmsAddBookComponent implements OnInit, OnDestroy{
     console.warn("Book Data:", book);
     this.bmsService.addBook(book);
     this.bookAdded.next(true);
+    
   }
 
   goBack() {

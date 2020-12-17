@@ -7,6 +7,27 @@
       </button>
     </div>
   </ng-container>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center mt-5 h-100">
+      <div class="col-6 text-center">
+        <div class="main-header">
+         <h1>All Books</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+<div>
+  <ng-container *ngFor="let book of listOfBooks | async" class="bookImage" >
+    <img [src]="book.imagePath" [alt]="book.imagePath" />
+    <div>
+      <span>{{book.Title}}</span>
+    </div>
+  </ng-container>
+</div>
+  
+
   <br> <br> <br> 
   <div class="container-fluid">
     <div class="row justify-content-center mt-5 h-100">
@@ -23,6 +44,8 @@
       <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
+          <th scope="col">Cover Page</th>
+          <th scope="col">Image Path</th>
           <th scope="col">Title</th>
           <th scope="col">Author</th>
           <th scope="col">ISBN</th>
@@ -40,6 +63,8 @@
         <ng-container *ngFor="let book of listOfBooks | async; let i = index;">
           <tr>
             <th scope="row">{{i}}</th>
+            <img [src]="book.imagePath"alt="CoverPage">
+            <td>{{book.imagePath}}</td>
             <td>{{book.Title}}</td>
             <td>{{book.Author}}</td>
             <td>{{book.ISBN}}</td>

@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from 'rxjs';
 import {Book} from '../models/book.model'
 import { reservation } from '../models/reservation.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,11 @@ import { reservation } from '../models/reservation.model';
 export class BmsService {
   listOfBooks: BehaviorSubject<Book[]> = new BehaviorSubject<Book[]>([]);
   listOfReservation : BehaviorSubject<reservation[]> = new BehaviorSubject<reservation[]>([]);
+ 
 
   constructor(private httpClient: HttpClient) { }
-
+  
+  
   getBooks(): Observable<Book[]> {
     return this.httpClient.get<Book[]>("http://localhost:3000/api/user/getBooks");
   }

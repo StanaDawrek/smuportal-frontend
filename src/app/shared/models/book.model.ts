@@ -8,4 +8,5 @@ export interface Book {
     pageCount: Number;
     createdAt: Date;
     NumberOfCopies: Number;
+    imagePath: string;
   }

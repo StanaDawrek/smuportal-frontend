@@ -8,7 +8,6 @@ import { BmsAddBookComponent } from './bms-add-book/bms-add-book.component';
 import { BmsReserveBookComponent } from './bms-reserve-book/bms-reserve-book.component';
 
 const routes: Routes = [
-
   {
     path: "list",
     component: ListBooksComponent
