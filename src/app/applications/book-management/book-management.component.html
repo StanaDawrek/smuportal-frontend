@@ -17,15 +17,61 @@
       </div>
     </div>
   </div>
- 
-<div>
-  <ng-container *ngFor="let book of listOfBooks | async" class="bookImage" >
-    <img [src]="book.imagePath" [alt]="book.imagePath" />
-    <div>
-      <span>{{book.Title}}</span>
+  <br>
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-center Sc">
+    <div class="active-pink-4 mb-4">
+      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
     </div>
+  <div class="dropdown">
+    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+      Category
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#">Math</a></li>
+      <li><a class="dropdown-item" href="#">Computer</a></li>
+      <li><a class="dropdown-item" href="#">Psychology</a></li>
+    </ul>
+  </div>
+
+</div>
+ 
+<div class="row justify-content-center">
+  <ng-container *ngFor="let book of listOfBooks | async"  >
+    <div class="col-6 col-sm-4 justify-content-center">
+    <img [src]="book.imagePath" [alt]="book.imagePath" class="bookImage" />
+    <div>
+      <span class="bookTitle">{{book.Title}}</span>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <button type="button" class="btn btn-danger " 
+            (click)="deleteBook(book.ISBN)">Delete</button>
+    <button type="button" class="btn btn-info " 
+              routerLink='/detailsbook' routerLinkActive="active">Details</button>
+   </div>
+  </div>
   </ng-container>
 </div>
+<br><br>
+<div class="btn-group d-grid gap-2 d-md-flex justify-content-md-center" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-success " 
+  (click)="goToAdd()">Add Book</button>
+</div>
+<br>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
   
 
   <br> <br> <br> 
