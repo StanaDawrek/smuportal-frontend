@@ -36,6 +36,9 @@ export class BookManagementComponent implements OnInit {
   goToAdd() {
     this.router.navigate(["/apps/lms/add"]);
   }
+  getBookbyISBN(bookISBN: Number){
+    this.bmsService.getbookbyISBN(bookISBN);
+  }
   deleteBook(bookISBN: Number) {
     this.bmsService.deleteBook(bookISBN);
     this.bookRemoved.next(true);

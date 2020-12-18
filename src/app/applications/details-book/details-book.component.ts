@@ -19,7 +19,7 @@ export class DetailsBookComponent implements OnInit {
   constructor(private bmsService: BmsService, private router: Router) { 
   }
   ngOnInit() {
-    this.bmsService.getBooks().subscribe({
+    this.bmsService.getbookbyISBN(9781119320913	).subscribe({
       next: (data: Book[]) => this.listOfBooks.next(data),
       error: (data: any) => console.log(data)
     })
@@ -39,8 +39,8 @@ export class DetailsBookComponent implements OnInit {
     this.bmsService.deleteBook(bookISBN);
     this.bookRemoved.next(true);
   }
-  getBooksbyISBN(bookISBN: Number){
-    this.bmsService.getBooksbyISBN(bookISBN);
+  getBookbyISBN(bookISBN: Number){
+    this.bmsService.getbookbyISBN(bookISBN);
   }
 
   goToReserve() {
