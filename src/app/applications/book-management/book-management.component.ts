@@ -68,13 +68,14 @@ export class BookManagementComponent implements OnInit {
        
       this.Title = document.getElementById("Title").innerHTML; 
       this.ISBN = document.getElementById("ISBN").innerHTML; 
-      
       this.description =document.getElementById("description").innerHTML;
   }
   //Bootstrap Modal Close event
   hide()
   {
     this.showModal = false;
-
+}
+bookDetail(bookISBN: Number): any{
+ this.router.navigate(["/apps/lms/bookmanagement/details",bookISBN]);
 }
 }

@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="row justify-content-center mt-5 h-100">
+      <div class="col-6 text-center">
+        <div class="main-header">
+          <h2>Book Management System</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br> 
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Cover Page</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">ISBN</th>
+          <th scope="col">description</th>
+          <th scope="col">category</th>
+          <th scope="col">publishDate</th>
+          <th scope="col">pageCount</th>
+          <th scope="col">createdAt</th>
+          <th scope="col">Action1</th>
+          <th scope="col">Action2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let book of listOfBooks | async; let i = index;">
+          <tr>
+            <th scope="row">{{i}}</th>
+            <img [src]="book.imagePath"alt="CoverPage">
+            <td id="Title">{{book.Title}}</td>
+            <td >{{book.Author}}</td>
+            <td id="ISBN">{{book.ISBN}}</td>
+            <td id="description">{{book.description}}</td>
+            <td>{{book.category}}</td>
+            <td>{{book.publishDate}}</td>
+            <td>{{book.pageCount}}</td>
+            <td>{{book.createdAt}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteBook(book.ISBN)">Delete</button>
+            </td>
+            <td><button type="button" class="btn btn-danger" (click)="onClick($event)" >Details</button>
+              </td> <!--routerLink='/detailsbook' routerLinkActive="active" getBookbyISBN(book.ISBN)-->
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
