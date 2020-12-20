@@ -22,6 +22,7 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
+        <th scope="col">Cover Page</th>
         <th scope="col">Title</th>
         <th scope="col">Author</th>
         <th scope="col">ISBN</th>
@@ -30,28 +31,28 @@
         <th scope="col">publishDate</th>
         <th scope="col">pageCount</th>
         <th scope="col">createdAt</th>
-        <th scope="col">NumberOfCopies</th>
-        <th scope="col">Action</th>
+        <th scope="col">Action1</th>
+        <th scope="col">Action2</th>
       </tr>
     </thead>
     <tbody>
       <ng-container *ngFor="let book of listOfBooks | async; let i = index;">
         <tr>
           <th scope="row">{{i}}</th>
-          <td>{{book.Title}}</td>
-          <td>{{book.Author}}</td>
-          <td>{{book.ISBN}}</td>
-          <td>{{book.description}}</td>
+          <img [src]="book.imagePath"alt="CoverPage">
+          <td id="Title">{{book.Title}}</td>
+          <td >{{book.Author}}</td>
+          <td id="ISBN">{{book.ISBN}}</td>
+          <td id="description">{{book.description}}</td>
           <td>{{book.category}}</td>
           <td>{{book.publishDate}}</td>
           <td>{{book.pageCount}}</td>
           <td>{{book.createdAt}}</td>
-          <td>{{book.NumberOfCopies}}</td>
-          <td><button type="button" class="btn btn-success" 
-            (click)="goToReserve()"> Reserve</button>
+          <td><button type="button" class="btn btn-danger" (click)="deleteBook(book.ISBN)">Delete</button>
           </td>
+          <td><button type="button" class="btn btn-danger" (click)="onClick($event)" >Details</button>
+            </td> <!--routerLink='/detailsbook' routerLinkActive="active" getBookbyISBN(book.ISBN)-->
         </tr>
       </ng-container>
     </tbody>
   </table>
-  

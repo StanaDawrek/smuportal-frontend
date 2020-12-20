@@ -12,16 +12,16 @@ export class BmsService {
   listOfBooks: BehaviorSubject<Book[]> = new BehaviorSubject<Book[]>([]);
   listOfReservation : BehaviorSubject<reservation[]> = new BehaviorSubject<reservation[]>([]);
  
-
+  selectedbook;
   constructor(private httpClient: HttpClient) { }
   
   
   getBooks(): Observable<Book[]> {
     return this.httpClient.get<Book[]>("http://localhost:3000/api/user/getBooks");
   }
-  getbookbyISBN(bookISBN: Number): Observable<Book[]> {
+  /* getbookbyISBN(bookISBN: Number): Observable<Book[]> {
     return this.httpClient.get<Book[]>(`http://localhost:3000/api/user/getBooksbyISBN/${bookISBN}`);
-  }
+  } */
 
   addBook(book: Book): void {
     this.httpClient.post<any>("http://localhost:3000/api/user/addBook", book).subscribe({
@@ -39,6 +39,15 @@ export class BmsService {
    this.listOfBooks.next(books);
 }
 
+
+private deleteBookByID(bookISBN: Number) {
+  const books: Book[] = this.listOfBooks.getValue();
+  books.forEach((book, index) => {
+    if(book.ISBN === bookISBN) {books.splice(index, 1);}
+  })
+  this.listOfBooks.next(books);
+}
+
 deleteBook(bookISBN: Number): void {
   this.httpClient.delete<any>(`http://localhost:3000/api/user/deleteBook/${bookISBN}`).subscribe({
    next: (data: any) => {
@@ -49,20 +58,28 @@ deleteBook(bookISBN: Number): void {
  })
 }
 
-
-private deleteBookByID(bookISBN: Number) {
-  const books: Book[] = this.listOfBooks.getValue();
-  books.forEach((book, index) => {
-    if(book.ISBN === bookISBN) {books.splice(index, 1);}
-  })
-  this.listOfBooks.next(books);
- }
+getbookbyISBN(bookISBN: Number): any {
+  this.httpClient.get<any>(`http://localhost:3000/api/user/getBooksbyISBN/${bookISBN}`).subscribe({
+   next: (data: any) => {
+    this.getbookbyID(bookISBN);
+    console.table(data);
+    this.selectedbook=data;
+    return data;
+    //return this.selectedbook;
+   },
+   error: (data: any) => console.log(data)
+   
+ })
+}
+getbookID(bookISBN:Number): Observable<Book[]> {
+  return  this.httpClient.get<any>(`http://localhost:3000/api/user/getBooksbyISBN/${bookISBN}`);
+}
 private getbookbyID(bookISBN: Number){
   const books: Book[] = this.listOfBooks.getValue();
-  books.forEach((book, index) => {
+  books.forEach((book) => {
     if(book.ISBN === bookISBN) {books.find;}
   })
-} 
+}
 
 getReservation(): Observable<reservation[]> {
     return this.httpClient.get<reservation[]>("http://localhost:3000/api/user/getReservations");
@@ -91,7 +108,6 @@ deleteReservation(ReservationISBN: Number): void {
      this.deleteReservationByID(ReservationISBN);
    },
    error: (data: any) => console.log(data)
-
  })
 }
 private deleteReservationByID(ReservationISBN: Number) {

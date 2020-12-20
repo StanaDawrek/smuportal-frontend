@@ -12,11 +12,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class BookManagementComponent implements OnInit {
   listOfBooks: BehaviorSubject<Book[]> = new BehaviorSubject<Book[]>([]);
   bookRemoved: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
   listOfReservation: BehaviorSubject<reservation[]> = new BehaviorSubject<reservation[]>([]);
   reservationRemoved: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  
+  selectedbook;
+  showModal : boolean;
+  Title : string;
+  ISBN  : string;
+  description     : string;
+  userID:Number;
+  Author: any;
   constructor(private bmsService: BmsService, private router: Router) { 
   }
   ngOnInit() {
@@ -37,7 +42,7 @@ export class BookManagementComponent implements OnInit {
     this.router.navigate(["/apps/lms/add"]);
   }
   getBookbyISBN(bookISBN: Number){
-    this.bmsService.getbookbyISBN(bookISBN);
+    this.selectedbook=this.bmsService.getbookbyISBN(bookISBN);
   }
   deleteBook(bookISBN: Number) {
     this.bmsService.deleteBook(bookISBN);
@@ -45,7 +50,7 @@ export class BookManagementComponent implements OnInit {
   }
   //getbookbyISBN(bookISBN: Number){
     //this.router.navigateByUrl("/detailsbook/");
-  ///}
+  //}
 
   goToReserve() {
     this.router.navigate(["/apps/lms/reserve"]);
@@ -54,5 +59,22 @@ export class BookManagementComponent implements OnInit {
     this.bmsService.deleteReservation(ReservationISBN);
     this.reservationRemoved.next(true);
   }
-}
+  onClick(event)
+  { 
+    
+    this.userID = event.target.id;
+    this.showModal = true; // Show-Hide Modal Check
+    
+       
+      this.Title = document.getElementById("Title").innerHTML; 
+      this.ISBN = document.getElementById("ISBN").innerHTML; 
+      
+      this.description =document.getElementById("description").innerHTML;
+  }
+  //Bootstrap Modal Close event
+  hide()
+  {
+    this.showModal = false;
 
+}
+}
