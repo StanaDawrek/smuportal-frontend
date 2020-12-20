@@ -117,5 +117,8 @@ private deleteReservationByID(ReservationISBN: Number) {
   })
   this.listOfReservation.next(reservations);
  }
+ getbookbyMathCategory(): Observable<Book[]> {
+   return  this.httpClient.get<any>(`http://localhost:3000/api/user//getBooksByMathCategory`);
+}
 
  }

@@ -78,4 +78,8 @@ export class BookManagementComponent implements OnInit {
 bookDetail(bookISBN: Number): any{
  this.router.navigate(["/apps/lms/bookmanagement/details",bookISBN]);
 }
+
+getbookbyMathCategory(){
+  this.bmsService.getbookbyMathCategory();
+}
 }

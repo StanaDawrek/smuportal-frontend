@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '@app/shared';
 import {BmsService} from "app/shared/services/bms.service";
 import { BehaviorSubject } from 'rxjs';
@@ -13,7 +13,7 @@ export class DetailsComponent implements OnInit {
   ISBN: String;
   listOfBooks: BehaviorSubject<Book[]> = new BehaviorSubject<Book[]>([]);
   
-  constructor(private bmsService: BmsService,private route: ActivatedRoute) {
+  constructor(private bmsService: BmsService,private route: ActivatedRoute, private router: Router) {
     
    }
 
@@ -28,5 +28,10 @@ export class DetailsComponent implements OnInit {
       error: (data: any) => console.log(data)
     })
   }
-
+  goToReserve(bookISBN:Number):any {
+    this.router.navigate(["/apps/lms/bookmanagement/reserve",bookISBN]);
+  }
+  bookDetail(bookISBN: Number): any{
+    this.router.navigate(["/apps/lms/bookmanagement/details",bookISBN]);
+   }
 }

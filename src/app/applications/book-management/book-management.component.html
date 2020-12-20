@@ -23,16 +23,21 @@
       <div class="active-pink-4 mb-4">
         <input class="form-control" type="text" placeholder="Search" aria-label="Search">
       </div>
-    <div class="dropdown">
-      <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-        Category
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Math</a></li>
-        <li><a class="dropdown-item" href="#">Computer</a></li>
-        <li><a class="dropdown-item" href="#">Psychology</a></li>
-      </ul>
-    </div>
+    
+      <div class="dropdown">
+        <select class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" class="btn btn-dark dropdown-toggle">
+          <option >Category </option>
+          <option (click) = "getbookbyMathCategory()">math</option>
+          <option>Psychology</option>
+          <option>Computer</option>
+        </select>
+        <button (click) = "getbookbyMathCategory()">
+          Submit
+        </button>
+     
+       </div>
+     
+    
 
   </div>
   

@@ -18,7 +18,7 @@ const routes: Routes = [
     component: BmsAddBookComponent
   },
   {
-    path: "reserve",
+    path: "reserve/:ISBN",
     component: BmsReserveBookComponent
   },
   {

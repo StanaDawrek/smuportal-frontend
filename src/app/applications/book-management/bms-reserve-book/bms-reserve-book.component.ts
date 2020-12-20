@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder} from '@angular/forms'
-import { Router} from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { BmsService, Book } from '@app/shared';
 import { reservation } from '@app/shared/models/reservation.model';
 import { BehaviorSubject } from 'rxjs';
@@ -13,17 +13,22 @@ import { BehaviorSubject } from 'rxjs';
 export class BmsReserveBookComponent implements OnInit,OnDestroy {
   reservationForm: any;
   reservationAdded: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  ISBN: String;
+  bookISBN: Number;
 
   constructor(private formBuilder: FormBuilder, private bmsService: BmsService,
-   private router: Router) {
+   private router: Router,private route: ActivatedRoute) {
+    this.ISBN = this.route.snapshot.paramMap.get('ISBN');
+    const isbn: Number = +this.ISBN;
     this.reservationForm = this.formBuilder.group({
      startDay: Date.now,
      endDay:Date.now,
-     ISBN:0
+     ISBN:isbn,
     })
   }
 
   ngOnInit() {
+   
   }
   ngOnDestroy() {
   }
