@@ -28,5 +28,10 @@
     "appName": "Book Management System",
     "iconUrl": "book.png",
     "path": "/apps/bms"
-}
+  },
+  {
+    "appName": "Book Management System Admin",
+    "iconUrl": "Library.png",
+    "path": "/apps/bms"
+  }
 ]

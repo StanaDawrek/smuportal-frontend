@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import {BookManagementComponent} from '../applications/book-management/book-management.component';
+import {BookManagementAdminComponent} from '../applications/book-management-admin/book-management-admin.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -27,11 +28,23 @@ const routes: Routes = [
             m => m.BookManagementModule
           )
       },
+      {
+        path: "bms", loadChildren: () =>
+          import("./book-management-system-admin/book-management-system-admin.module").then(
+            m => m.BookManagementSystemAdminModule
+          )
+      },
+      {
+        path: "bms/bookmanagementadmin", loadChildren: () =>
+          import("./book-management-admin/book-management-admin.module").then(
+            m => m.BookManagementAdminModule
+          )
+      }
     ]
   }
 ];
 @NgModule({
-  declarations: [BookManagementComponent,routingComponents],
+  declarations: [BookManagementComponent,routingComponents, BookManagementAdminComponent],
   imports: [CommonModule, RouterModule.forChild(routes),AppRoutingModule,ReactiveFormsModule],
   exports: [RouterModule]
 })

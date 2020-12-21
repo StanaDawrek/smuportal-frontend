@@ -1,0 +1,199 @@
+
+  <ng-container *ngIf="this.bookRemoved | async">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      The Book Has Been Successfully Removed.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+</ng-container>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center mt-5 h-100">
+      <div class="col-6 text-center">
+        <div class="main-header">
+        <h1>All Books</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-center Sc">
+    <div class="active-pink-4 mb-4">
+      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    </div>
+  
+    <div class="dropdown">
+      <select class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" class="btn btn-dark dropdown-toggle">
+        <option >Category </option>
+        <option (click) = "getbookbyMathCategory()">math</option>
+        <option>Psychology</option>
+        <option>Computer</option>
+      </select>
+      <button (click) = "getbookbyMathCategory()">
+        Submit
+      </button>
+   
+     </div>
+   
+  
+
+</div>
+
+<div class="row justify-content-center">
+  <ng-container *ngFor="let book of listOfBooks | async"  >
+    <div class="col-6 col-sm-4 justify-content-center">
+    <img [src]="book.imagePath" [alt]="book.imagePath" class="bookImage" />
+    <div>
+      <span class="bookTitle">{{book.Title}}</span>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <button type="button" class="btn btn-danger " 
+            (click)="deleteBook(book.ISBN)">Delete</button>
+    <button type="button" class="btn btn-info" (click)="bookDetail(book.ISBN)" >Details</button>
+  </div>
+  <!--routerLink='/detailsbook' routerLinkActive="active"-->
+  </div>
+  </ng-container>
+</div>
+<br><br>
+<div class="btn-group d-grid gap-2 d-md-flex justify-content-md-center" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-success " 
+  (click)="goToAdd()">Add Book</button>
+</div>
+<br>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+
+<br> <br> <br> 
+<div class="container-fluid">
+  <div class="row justify-content-center mt-5 h-100">
+    <div class="col-6 text-center">
+      <div class="main-header">
+        <h2>Book Management System</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<br> 
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cover Page</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">description</th>
+        <th scope="col">category</th>
+        <th scope="col">publishDate</th>
+        <th scope="col">pageCount</th>
+        <th scope="col">createdAt</th>
+        <th scope="col">Action1</th>
+        <th scope="col">Action2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let book of listOfBooks | async; let i = index;">
+        <tr>
+          <th scope="row">{{i}}</th>
+          <img [src]="book.imagePath"alt="CoverPage">
+          <td id="Title">{{book.Title}}</td>
+          <td >{{book.Author}}</td>
+          <td id="ISBN">{{book.ISBN}}</td>
+          <td id="description">{{book.description}}</td>
+          <td>{{book.category}}</td>
+          <td>{{book.publishDate}}</td>
+          <td>{{book.pageCount}}</td>
+          <td>{{book.createdAt}}</td>
+          <td><button type="button" class="btn btn-danger" (click)="deleteBook(book.ISBN)">Delete</button>
+          </td>
+          <td><button type="button" class="btn btn-danger" (click)="onClick($event)" >Details</button>
+            </td> <!--routerLink='/detailsbook' routerLinkActive="active" getBookbyISBN(book.ISBN)-->
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-success" 
+    (click)="goToAdd()">Add Book</button>
+  </div>
+  <div class="container-fluid">
+    <div class="row justify-content-center mt-5 h-100">
+      <div class="col-6 text-center">
+        <div class="main-header">
+          <h2>All Reservations</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">startDay</th>
+        <th scope="col">endDay</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let Reservation of listOfReservation | async; let i = index;">
+        <tr>
+          <th scope="row">{{i}}</th>
+          <td>{{Reservation.startDay}}</td>
+          <td>{{Reservation.endDay}}</td>
+          <td>{{Reservation.ISBN}}</td>
+          <td><button type="button" class="btn btn-danger" 
+          (click)="deleteReservation(Reservation.ISBN)">Delete</button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <!-- The Modal -->
+  <div class="modal" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Book Details:</h4>
+          <button type="button" class="close" data-dismiss="modal" (click) = "hide()">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+         
+         <p>Title : {{Title}}</p>
+         <p>ISBN : {{ISBN}}</p>
+         <p>description : {{description}}</p>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">description
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click) = "hide()">Close</button>
+        </div>
+        
+      </div>
+    </div>
+</div>
+</div>
+</div>
