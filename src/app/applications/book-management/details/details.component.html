@@ -6,58 +6,77 @@
       </button>
     </div>
   </ng-container>
-  <br> <br> <br> 
+  <br> 
 <div class="container-fluid">
     <div class="row justify-content-center mt-5 h-100">
+      <ng-container *ngFor="let book of listOfBooks | async"  >
       <div class="col-6 text-center">
         <div class="main-header">
-          <h2>Book Management System</h2>
+          <h2>{{book.Title}}</h2>
         </div>
       </div>
+      </ng-container>
     </div>
   </div>
   <br> 
-  <div class="table-responsive">
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Cover Page</th>
-          <th scope="col">Title</th>
-          <th scope="col">Author</th>
-          <th scope="col">ISBN</th>
-          <th scope="col">description</th>
-          <th scope="col">category</th>
-          <th scope="col">publishDate</th>
-          <th scope="col">pageCount</th>
-          <th scope="col">createdAt</th>
-          <th scope="col">NumberOfCopies</th>
-          <th scope="col">Action1</th>
-          <th scope="col">Action2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <ng-container *ngFor="let book of listOfBooks | async; let i = index;">
-          <tr>
-            <th scope="row">{{i}}</th>
-            <img [src]="book.imagePath"alt="CoverPage">
-            <td id="Title">{{book.Title}}</td>
-            <td >{{book.Author}}</td>
-            <td id="ISBN">{{book.ISBN}}</td>
-            <td id="description">{{book.description}}</td>
-            <td>{{book.category}}</td>
-            <td>{{book.publishDate}}</td>
-            <td>{{book.pageCount}}</td>
-            <td>{{book.createdAt}}</td>
-            <td>{{book.NumberOfCopies}}</td>
-            <td><button type="button" class="btn btn-danger" (click)="deleteBook(book.ISBN)">Delete</button>
-            </td>
-            <td>
-                <button type="button" class="btn btn-success" 
-                (click)="goToReserve(book.ISBN)"> Reserve</button>
-              
-              </td> <!--routerLink='/detailsbook' routerLinkActive="active" getBookbyISBN(book.ISBN)-->
-          </tr>
-        </ng-container>
-      </tbody>
-    </table>
+  <div class="row justify-content-center">
+    <ng-container *ngFor="let book of listOfBooks | async"  >
+      <div class="col-6 col-sm-3 justify-content-center">
+      <img [src]="book.imagePath" [alt]="book.imagePath" class="bookImage" />
+      </div>
+      <div class="col-6 col-sm-5 justify-content-center">
+        <div class="row ">
+          <div>
+            <span style="font-style: italic; text-decoration: underline; font-weight: bold;" >{{book.Author}}</span>
+          </div>
+        </div>
+      <br>
+        <div class="row ">
+          <div>
+            <span >{{book.description}}</span>
+          </div>
+        </div>
+        <br>
+        <div class="row ">
+          <div>
+            <span style="font-style: italic; text-decoration: underline;font-weight: bold;"> Category: {{book.category}}</span>
+          </div>
+        </div>
+        <div class="row ">
+          <div>
+            <span style="font-style: italic; text-decoration: underline;font-weight: bold;">ISBN: {{book.ISBN}}</span>
+          </div>
+        </div>
+        <div class="row ">
+          <div>
+            <span style="font-style: italic; text-decoration: underline;font-weight: bold;"> PublishDate: {{book.publishDate}}</span>
+          </div>
+        </div>
+        <div class="row ">
+          <div>
+            <span style="font-style: italic; text-decoration: underline;font-weight: bold;"> PageCount: {{book.pageCount}}</span>
+          </div>
+        </div>
+        <div class="row ">
+          <div>
+            <span style="font-style: italic; text-decoration: underline;font-weight: bold;">createdAt: {{book.createdAt}}</span>
+          </div>
+        </div>
+        <div class="row ">
+          <div>
+            <span style="font-style: italic; text-decoration: underline;font-weight: bold;"> NumberOfCopies: {{book.NumberOfCopies}}</span>
+          </div>
+        </div>
+      </div>
+      <div >
+      <button type="button" class="btn btn-danger " 
+              (click)="deleteBook(book.ISBN)">Delete</button>
+      <button type="button" class="btn btn-success" 
+              (click)="goToReserve(book.ISBN)"> Reserve</button>
+    </div>
+    <!--routerLink='/detailsbook' routerLinkActive="active"-->
+    
+    </ng-container>
+  </div>
+  <br>
+ 
