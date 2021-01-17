@@ -6,6 +6,9 @@ import {BookManagementComponent} from '../applications/book-management/book-mana
 import {BookManagementAdminComponent} from '../applications/book-management-admin/book-management-admin.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { AccountManagementComponent } from './account-management/account-management.component';
+import { FirmManagementComponent } from './firm-management/firm-management.component';
+import { GoogleAnalyticsComponent } from './google-analytics/google-analytics.component';
 
 const routes: Routes = [
   {
@@ -62,7 +65,7 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [BookManagementComponent,routingComponents, BookManagementAdminComponent],
+  declarations: [BookManagementComponent,routingComponents, BookManagementAdminComponent, AccountManagementComponent, FirmManagementComponent, GoogleAnalyticsComponent],
   imports: [CommonModule, RouterModule.forChild(routes),AppRoutingModule,ReactiveFormsModule],
   exports: [RouterModule]
 })
