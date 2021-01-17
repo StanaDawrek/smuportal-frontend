@@ -5,21 +5,6 @@
     "path": "/apps/logistics"
   },
   {
-    "appName": "Job App",
-    "iconUrl": "job-applications.png",
-    "path": "/apps/jobs"
-  },
-  {
-    "appName": "Document and Services",
-    "iconUrl": "docs.png",
-    "path": "/apps/docs"
-  },
-  {
-    "appName": "Admin Dashboard",
-    "iconUrl": "users.png",
-    "path": "/apps/admin"
-  },
-  {
     "appName": "Library Management System",
     "iconUrl": "book.png",
     "path": "/apps/lms"
@@ -31,7 +16,22 @@
   },
   {
     "appName": "Book Management System Admin",
-    "iconUrl": "Library.png",
+    "iconUrl": "book.png",
     "path": "/apps/bms"
+  },
+  {
+    "appName": "Admin Panel",
+    "iconUrl": "admin.png",
+    "path": "/apps/admin"
+  },
+  {
+    "appName": "Public Services",
+    "iconUrl": "public.png",
+    "path": "/apps/publics"
+  },
+  {
+    "appName": "Private Services",
+    "iconUrl": "private.png",
+    "path": "/apps/privates"
   }
 ]

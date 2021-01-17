@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardLibraryComponent } from './dashboard-library.component';
+import { ListUsersComponent } from './list-users.component';
 
-describe('DashboardLibraryComponent', () => {
-  let component: DashboardLibraryComponent;
-  let fixture: ComponentFixture<DashboardLibraryComponent>;
+describe('ListUsersComponent', () => {
+  let component: ListUsersComponent;
+  let fixture: ComponentFixture<ListUsersComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardLibraryComponent ]
+      declarations: [ ListUsersComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardLibraryComponent);
+    fixture = TestBed.createComponent(ListUsersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

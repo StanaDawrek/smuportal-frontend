@@ -1,0 +1,1 @@
+export * from "./private-main-page.component"

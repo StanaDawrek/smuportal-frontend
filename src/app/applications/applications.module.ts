@@ -11,6 +11,24 @@ const routes: Routes = [
   {
     path: "apps", children: [
       {
+        path: "publics", loadChildren: () =>
+          import("./public-services/public-services.module").then(
+            m => m.PublicServicesModule
+          )
+      },
+      {
+        path: "privates", loadChildren: () =>
+          import("./private-services/private-services.module").then(
+            m => m.PrivateServicesModule
+          )
+      },
+      {
+        path: "admin", loadChildren: () =>
+          import("./admin-panel/admin-panel.module").then(
+            m => m.AdminPanelModule
+          )
+      },
+      {
         path: "logistics", loadChildren: () =>
           import("./logistics-reservation/logistics-reservation.module").then(
             m => m.LogisticsReservationModule

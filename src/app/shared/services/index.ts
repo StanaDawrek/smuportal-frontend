@@ -5,5 +5,6 @@ export * from "./tfa.service";
 export * from "./box-booking.service";
 export * from "./bms.service";
 export * from "./lms.service";
+export * from "./admin.service";
 
 

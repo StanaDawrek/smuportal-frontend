@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WelcomeUserComponent } from './welcome-user.component';
+import { PublicMainPageComponent } from './public-main-page.component';
 
-describe('WelcomeUserComponent', () => {
-  let component: WelcomeUserComponent;
-  let fixture: ComponentFixture<WelcomeUserComponent>;
+describe('PublicMainPageComponent', () => {
+  let component: PublicMainPageComponent;
+  let fixture: ComponentFixture<PublicMainPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WelcomeUserComponent ]
+      declarations: [ PublicMainPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WelcomeUserComponent);
+    fixture = TestBed.createComponent(PublicMainPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
