@@ -1,1 +1,44 @@
-<p>account-management works!</p>
+<br>
+
+<ng-container *ngIf="this.UserRemoved | async">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      The User Has Been Successfully Removed.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </ng-container>
+  
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">ID</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let user of listOfUsers | async; let i = index;">
+          <tr>
+            <th scope="row">{{i}}</th>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.universityID}}</td>
+            <td>{{user.email}}</td>
+            <td><button type="button" class="btn btn-danger" 
+            (click)="deleteUser(user.universityID)">Delete</button>
+            </td>
+            <td><button type="button" class="btn btn-primary" 
+                (click)="deleteUser(user.universityID)">Edit</button>
+                </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  
+  </div>
+  <br>
+ 
