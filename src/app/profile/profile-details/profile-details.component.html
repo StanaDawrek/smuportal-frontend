@@ -1,15 +1,15 @@
 <!-- Page Content -->
 <div id="page-content-wrapper">
-  <div class="container">
+  <div class="container ">
     <h1>Manage your Account</h1>
     <p>Basic information regarding your account that you have created</p>
-    <div class="container">
+    <div class="container justify-content-center">
       <div class="row mt-5">
         <div class="col font-weight-bold">First Name:</div>
         <div class="col font-weight-bold">Last Name:</div>
       </div>
       <div class="row">
-        <div class="col">{{ User?.firstName | titlecase  }}</div>
+        <div class="col">{{ User?.firstName | titlecase }}</div>
         <div class="col">{{ User?.lastName | titlecase }}</div>
       </div>
       <div class="row mt-4">
@@ -35,12 +35,24 @@
       <div class="row my-4 pb-4 border-bottom">
         <div class="col font-weight-bold"><span class="mr-3">Modify Password</span>
           <fa-icon [icon]="faPencilAalt" id="edit-password"></fa-icon>
-          </div>
+        </div>
+
       </div>
-      <button type="button" class="btn btn-info" >Edit</button>
-      <br>
-      <br>
-      <button type="button" class="btn btn-default">Save</button>
+
+      <div class="row mt-4">
+        <div class="col cent">
+          <button type="button" class="btn btn-info">Edit</button>
+        </div>
+        <div class="col cent">
+          <button type="button" class="btn btn-default">Save</button>
+        </div>
+      </div>
+      <div class="row my-4 pt-4 border-top justify-content-center" style="text-align: center;">
+        <br>
+        <a href="mailto:stanadawrek@gmail.com" style="font-weight: bold;" class="email">Contact us</a>
+
+      </div>
     </div>
+
   </div>
 </div>

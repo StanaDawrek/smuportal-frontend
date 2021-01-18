@@ -30,3 +30,12 @@
     margin-left: 1em !important;
   }
 }
+.email {
+  color: #8B0000;
+}
+.cent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
