@@ -4,8 +4,8 @@
 }
 
 #blueRect {
-	opacity: .73;
-	filter: blur(4px);
+	opacity: 60%;
+	filter: blur(20px);
 	width: 761px;
 	height: 743px
 }
@@ -40,7 +40,7 @@
 	font-style: normal;
 	font-weight: lighter;
 	font-size: 70px;
-	color: #028b95
+	color: #8B0000
 }
 
 #introToSMU {
@@ -76,7 +76,7 @@
 #ENTERING_SMU {
 	position: absolute;
 	left: 352px;
-	top: 396px;
+	top: 580px;
 	overflow: visible;
 	width: 512px;
 	white-space: nowrap;
@@ -91,7 +91,7 @@
 #PORTAL_ {
 	position: absolute;
 	left: 352px;
-	top: 463px;
+	top: 660px;
 	overflow: visible;
 	width: 271px;
 	white-space: nowrap;
@@ -106,7 +106,7 @@
 #portalDesc {
 	position: absolute;
 	left: 360px;
-	top: 556px;
+	top: 750px;
 	overflow: visible;
 	width: 599px;
 	white-space: nowrap;
@@ -124,5 +124,5 @@
 }
 
 .email {
-  color: #ff8800;
+  color: #8B0000;
 }

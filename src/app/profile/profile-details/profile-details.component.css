@@ -6,13 +6,13 @@
 
 #edit-password:hover {
   cursor: pointer;
-  color: rgb(226, 114, 34);
+  color: #8B0000;
 }
 
 .btn-default, .btn-default:hover, .btn-default:focus, .btn-default:active:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default{
   padding: 1% 6%;
-  border-color: rgb(226, 114, 34);
-  background-color: rgb(226, 114, 34);
+  border-color: #8B0000;
+  background-color:#8B0000;
   color: white;
   border-radius: 0;
 }

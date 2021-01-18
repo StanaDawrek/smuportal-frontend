@@ -2,7 +2,7 @@
 <div id="page-content-wrapper">
   <div class="container">
     <h1>Manage your Account</h1>
-    <p>Basic information regarding your SMU account that you have created</p>
+    <p>Basic information regarding your account that you have created</p>
     <div class="container">
       <div class="row mt-5">
         <div class="col font-weight-bold">First Name:</div>
@@ -13,18 +13,12 @@
         <div class="col">{{ User?.lastName | titlecase }}</div>
       </div>
       <div class="row mt-4">
-        <div class="col font-weight-bold">SMU ID:</div>
+        <div class="col font-weight-bold">ID:</div>
         <div class="col font-weight-bold">Email:</div>
       </div>
       <div class="row">
         <div class="col">{{ User?.universityID | universityID }}</div>
         <div class="col">{{ User?.email }}</div>
-      </div>
-      <div class="row mt-4">
-        <div class="col font-weight-bold">University:</div>
-      </div>
-      <div class="row">
-        <div class="col">South Mediterranean University</div>
       </div>
       <div class="row mt-4">
         <div class="col font-weight-bold">Last login:</div>

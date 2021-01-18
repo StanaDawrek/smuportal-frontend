@@ -10,6 +10,7 @@ import { AccountManagementComponent } from './account-management/account-managem
 import { FirmManagementComponent } from './firm-management/firm-management.component';
 import { GoogleAnalyticsComponent } from './google-analytics/google-analytics.component';
 
+
 const routes: Routes = [
   {
     path: "apps", children: [
@@ -59,6 +60,12 @@ const routes: Routes = [
         path: "bms/bookmanagementadmin", loadChildren: () =>
           import("./book-management-admin/book-management-admin.module").then(
             m => m.BookManagementAdminModule
+          )
+      },
+      {
+        path: "firm", loadChildren: () =>
+          import("./firm-management/firm-management.module").then(
+            m => m.FirmModule
           )
       }
     ]
