@@ -1,5 +1,14 @@
-<br>
+<div class="container-fluid">
+    <div class="row justify-content-center mt-5 h-100">
+      <div class="col-6 text-center">
+        <div class="main-header">
+          <h2>Accounts Management System</h2>
+        </div>
+      </div>
+    </div>
 
+<br>
+<div class="justify-content-center mt-20">
 <ng-container *ngIf="this.UserRemoved | async">
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       The User Has Been Successfully Removed.
@@ -31,8 +40,8 @@
             <td><button type="button" class="btn btn-danger" 
             (click)="deleteUser(user.universityID)">Delete</button>
             </td>
-            <td><button type="button" class="btn btn-primary" 
-                (click)="deleteUser(user.universityID)">Edit</button>
+            <td>
+                <button type="button" class="btn btn-info" >Edit</button>
                 </td>
           </tr>
         </ng-container>
@@ -40,5 +49,6 @@
     </table>
   
   </div>
+</div>
   <br>
  

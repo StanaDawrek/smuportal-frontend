@@ -1,25 +1,5 @@
 [
   {
-    "appName": "Logistics Reservation",
-    "iconUrl": "logistics-reservation.png",
-    "path": "/apps/logistics"
-  },
-  {
-    "appName": "Library Management System",
-    "iconUrl": "book.png",
-    "path": "/apps/lms"
-  },
-  {
-    "appName": "Book Management System",
-    "iconUrl": "book.png",
-    "path": "/apps/bms"
-  },
-  {
-    "appName": "Book Management System Admin",
-    "iconUrl": "book.png",
-    "path": "/apps/bms"
-  },
-  {
     "appName": "Admin Panel",
     "iconUrl": "admin.png",
     "path": "/apps/admin"
