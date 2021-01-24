@@ -19,7 +19,7 @@ export class AddFirmComponent implements OnInit {
      this.FirmForm = this.formBuilder.group({
       Name:"",
       Sector: "",
-      Industry: 0,
+      Industry: "",
       PublicPrivate: "",
       Address:"",
       Registration: 0,

@@ -15,7 +15,7 @@
           <div *ngIf="form.get('lastName').invalid && submitted" class="invalid">{{getLastNameErrorMessage()}}</div>
         </div>
         <div id="idForm" class="form-group">
-          <input placeholder="UniversityID" type="text" formControlName="universityID" class="form-control" />
+          <input placeholder="ID" type="text" formControlName="universityID" class="form-control" />
           <div *ngIf="form.get('universityID').invalid && submitted" class="invalid">{{getUniversityErrorMessage()}}
           </div>
         </div>
