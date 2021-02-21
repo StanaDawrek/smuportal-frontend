@@ -131,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "smuportal"
+  "defaultProject": "smuportal",
+  "cli": {
+    "analytics": "94889cbc-d228-40d0-81ee-af8edb72687a"
+  }
 }

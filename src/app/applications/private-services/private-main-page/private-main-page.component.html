@@ -1,1 +1,44 @@
-<p>private-main-page works!</p>
+<br>
+<ng-container *ngIf="this.FirmRemoved | async">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      The Firm Has Been Successfully Removed.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </ng-container>
+  
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Sector</th>
+          <th scope="col">Industry</th>
+          <th scope="col">Public or Private</th>
+          <th scope="col">Address</th>
+          <th scope="col">Registration</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let Firm of listOfFirms | async; let i = index;">
+          <tr>
+            <th scope="row">{{i}}</th>
+            <td>{{Firm.Name}}</td>
+            <td>{{Firm.Sector}}</td>
+            <td>{{Firm.Industry}}</td>
+            <td>{{Firm.PublicPrivate}}</td>
+            <td>{{Firm.Address}}</td>
+            <td>{{Firm.Registration}}</td>
+            <td>{{Firm.Email}}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+
+    
+  </div>
+  <br>
+ 

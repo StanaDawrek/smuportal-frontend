@@ -30,8 +30,8 @@ export class FirmManagementComponent implements OnInit {
     this.router.navigate(["/apps/firm/add"]);
   }
 
-  deleteUser(Registration: Number) {
-    this.FirmService.deleteUser(Registration);
+  deleteFirm(Registration: Number) {
+    this.FirmService.deleteFirm(Registration);
     this.FirmRemoved.next(true);
   }
 }

@@ -24,9 +24,25 @@ export class FirmService {
     })
     this.listOfFirms.next(firms);
   }
+  getFirmByPublicSector(): Observable<firm[]> {
+    return this.httpClient.get<firm[]>("http://localhost:3000/api/user/getFirmsByPublicSector");
+  }
+  getFirmByPrivateSector(): Observable<firm[]> {
+    return this.httpClient.get<firm[]>("http://localhost:3000/api/user/getFirmsByPrivateSector");
+  }
+  
   
   deleteUser(Registration: Number): void {
     this.httpClient.delete<any>(`http://localhost:3000/api/user/deleteUser/${Registration}`).subscribe({
+     next: (data: any) => {
+       console.log(data);
+       this.deleteUserByID(Registration);
+     },
+     error: (data: any) => console.log(data)
+   })
+  }
+  deleteFirm(Registration: Number): void {
+    this.httpClient.delete<any>(`http://localhost:3000/api/user/deleteFirm/${Registration}`).subscribe({
      next: (data: any) => {
        console.log(data);
        this.deleteUserByID(Registration);
