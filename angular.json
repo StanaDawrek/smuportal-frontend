@@ -133,6 +133,10 @@
   },
   "defaultProject": "smuportal",
   "cli": {
+<<<<<<< Updated upstream
     "analytics": "94889cbc-d228-40d0-81ee-af8edb72687a"
+=======
+    "analytics": "05aeac61-8a1f-43a5-aa44-c89ca7b466d1"
+>>>>>>> Stashed changes
   }
 }
