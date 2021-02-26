@@ -26,4 +26,7 @@ export class PublicMainPageComponent implements OnInit {
   ngOnDestroy(){
 
   }
+  FirmServices(Registration: Number): any{
+    this.router.navigate(["/apps/publics/services",Registration]);
+   }
 }

@@ -7,6 +7,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AccountManagementComponent } from './account-management/account-management.component';
 import { FirmManagementComponent } from './firm-management/firm-management.component';
 import { GoogleAnalyticsComponent } from './google-analytics/google-analytics.component';
+import { FirmServicesComponent } from './firm-services/firm-services.component';
 
 
 const routes: Routes = [
@@ -46,7 +47,7 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [routingComponents, AccountManagementComponent, FirmManagementComponent, GoogleAnalyticsComponent],
+  declarations: [routingComponents, AccountManagementComponent, FirmManagementComponent, GoogleAnalyticsComponent, FirmServicesComponent],
   imports: [CommonModule, RouterModule.forChild(routes),AppRoutingModule,ReactiveFormsModule],
   exports: [RouterModule]
 })

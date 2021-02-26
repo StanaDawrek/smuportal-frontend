@@ -20,6 +20,7 @@
           <th scope="col">Address</th>
           <th scope="col">Registration</th>
           <th scope="col">Email</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -33,6 +34,7 @@
             <td>{{Firm.Address}}</td>
             <td>{{Firm.Registration}}</td>
             <td>{{Firm.Email}}</td>
+            <td><button type="button" class="btn btn-info" (click)="FirmServices(Firm.Registration)" >Services</button></td>
           </tr>
         </ng-container>
       </tbody>

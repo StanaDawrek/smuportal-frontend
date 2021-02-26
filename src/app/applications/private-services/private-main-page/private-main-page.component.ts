@@ -25,4 +25,7 @@ export class PrivateMainPageComponent implements OnInit {
   }
   ngOnDestroy(){
   }
+  FirmServices(Registration: Number): any{
+    this.router.navigate(["/apps/privates/services",Registration]);
+   }
 }
