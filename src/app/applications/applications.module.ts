@@ -8,6 +8,9 @@ import { AccountManagementComponent } from './account-management/account-managem
 import { FirmManagementComponent } from './firm-management/firm-management.component';
 import { GoogleAnalyticsComponent } from './google-analytics/google-analytics.component';
 import { FirmServicesComponent } from './firm-services/firm-services.component';
+import { ExtractDocumentComponent } from './extract-document/extract-document.component';
+import { SignatureComponent } from './signature/signature.component';
+import { CopieConformeComponent } from './copie-conforme/copie-conforme.component';
 
 
 const routes: Routes = [
@@ -47,7 +50,7 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [routingComponents, AccountManagementComponent, FirmManagementComponent, GoogleAnalyticsComponent, FirmServicesComponent],
+  declarations: [routingComponents, AccountManagementComponent, FirmManagementComponent, GoogleAnalyticsComponent, FirmServicesComponent, ExtractDocumentComponent, SignatureComponent, CopieConformeComponent],
   imports: [CommonModule, RouterModule.forChild(routes),AppRoutingModule,ReactiveFormsModule],
   exports: [RouterModule]
 })

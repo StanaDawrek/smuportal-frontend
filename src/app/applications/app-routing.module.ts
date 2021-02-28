@@ -4,6 +4,9 @@ import { AccountManagementComponent } from './account-management/account-managem
 import { FirmManagementComponent } from './firm-management/firm-management.component';
 import { GoogleAnalyticsComponent } from './google-analytics/google-analytics.component';
 import { FirmServicesComponent } from './firm-services/firm-services.component'; 
+import { SignatureComponent } from './signature/signature.component'; 
+import { CopieConformeComponent } from './copie-conforme/copie-conforme.component'; 
+import { ExtractDocumentComponent } from './extract-document/extract-document.component'; 
 
 
 
@@ -13,6 +16,9 @@ const routes: Routes=[
     {path: `firmsmanagement`, component: FirmManagementComponent},
     {path: `googleanalytics`, component: GoogleAnalyticsComponent},
     {path: `firmservices`, component: FirmServicesComponent },
+    {path: `signature`, component: SignatureComponent },
+    {path: `copieconforme`, component: CopieConformeComponent },
+    {path: `extractdocument`, component: ExtractDocumentComponent },
 ];
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
