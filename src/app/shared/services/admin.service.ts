@@ -24,7 +24,6 @@ export class AdminService {
     })
     this.listOfUsers.next(users);
   }
-  
   deleteUser(universityID: Number): void {
     this.httpClient.delete<any>(`http://localhost:3000/api/user/deleteUser/${universityID}`).subscribe({
      next: (data: any) => {

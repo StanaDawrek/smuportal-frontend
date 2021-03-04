@@ -13,7 +13,7 @@ export class FirmManagementComponent implements OnInit {
 
   listOfFirms: BehaviorSubject<firm[]> = new BehaviorSubject<firm[]>([]);
   FirmRemoved: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
+  Name: string;
   constructor(private FirmService: FirmService, private router: Router) { 
   }
   ngOnInit() {
