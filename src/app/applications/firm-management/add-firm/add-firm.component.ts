@@ -12,6 +12,7 @@ import { FormGroup, FormControl } from "@angular/forms";
   styleUrls: ['./add-firm.component.css']
 })
 export class AddFirmComponent implements OnInit {
+  firm: firm;
   FirmForm: any;
   FirmAdded: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   imageData: string;
@@ -42,15 +43,8 @@ export class AddFirmComponent implements OnInit {
       imagePath: new FormControl(null),
     });
    }
-   ngOnDestroy() {
-   }
-   onSubmit(firm: firm) {
-     this.FirmForm.reset();
-     console.warn("Firm Data:", firm);
-     this.FirmService.addFirm(firm);
-     this.FirmAdded.next(true);
-     this.imageData = null;
-   }
+   
+   
    onFileSelect(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
     this.FirmForm.patchValue({ image: file });
@@ -63,6 +57,15 @@ export class AddFirmComponent implements OnInit {
       };
       reader.readAsDataURL(file);
     }
+  }
+  ngOnDestroy() {
+  }
+  onSubmit(firm: firm) {
+    this.FirmForm.reset();
+    console.warn("Firm Data:", firm);
+    this.FirmService.addFirm(firm);
+    this.FirmAdded.next(true);
+    this.imageData = null;
   }
    goBack() {
      this.router.navigate(["/firmsmanagement"]);

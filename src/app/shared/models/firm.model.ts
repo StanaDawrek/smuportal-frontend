@@ -6,4 +6,5 @@ export interface firm {
     Address: String;
     Registration: Number;
     Email: String;
+    imagePath: String;
   }

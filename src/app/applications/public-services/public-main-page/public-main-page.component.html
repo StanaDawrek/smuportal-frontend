@@ -7,7 +7,18 @@
       </button>
     </div>
   </ng-container>
-  
+  <div class="row justify-content-center">
+    <ng-container *ngFor="let firm of listOfFirms | async"  >
+      <div class="col-6 col-sm-4 justify-content-center">
+      <img [src]="firm.imagePath" [alt]="firm.imagePath" class="firmImage" />
+      <div>
+        <span class="firmTitle">{{firm.Name}}</span>
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    </div>
+    </div>
+    </ng-container>
+  </div>
   <div class="table-responsive">
     <table class="table">
       <thead class="thead-dark">
@@ -34,7 +45,7 @@
             <td>{{Firm.Address}}</td>
             <td>{{Firm.Registration}}</td>
             <td>{{Firm.Email}}</td>
-            <td><button type="button" class="btn btn-info" (click)="FirmServices(Firm.Registration)" >Services</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="FirmServices(Firm.Registration)" >Services</button></td>
           </tr>
         </ng-container>
       </tbody>
