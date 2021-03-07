@@ -1,0 +1,27 @@
+.timer {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.4em;
+    letter-spacing: -1px;
+  }
+  .timer span {
+    font-size: 2em;
+    margin: 0 3px 0 15px;
+  }
+.card{
+  box-shadow: 5px 5px 5px 5px #888888;
+}
+.book
+{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-left: 50%;
+}
+.btn-default{
+  padding: 1% 6%;
+  border-color: #8B0000;
+  background-color:#8B0000;
+  color: white;
+  border-radius: 50;
+}

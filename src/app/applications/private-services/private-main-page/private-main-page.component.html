@@ -1,3 +1,12 @@
+<div class="container-fluid">
+  <div class="row justify-content-center mt-5 h-100">
+    <div class="col-6 text-center">
+      <div class="main-header">
+        <h1>Private Firms </h1>
+      </div>
+    </div>
+  </div>
+</div>
 <br>
 <ng-container *ngIf="this.FirmRemoved | async">
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -9,49 +18,15 @@
   </ng-container>
   <div class="row justify-content-center">
     <ng-container *ngFor="let firm of listOfFirms | async"  >
-      <div class="col-6 col-sm-4 justify-content-center">
+      <div class="col-6 col-sm-4 justify-content-center mt-5 h-100">
       <img [src]="firm.imagePath" [alt]="firm.imagePath" class="firmImage" />
       <div>
         <span class="firmTitle">{{firm.Name}}</span>
       </div>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-    </div>
+      <button type="button" class="btn btn-danger services justify-content-center" (click)="FirmServices(firm.Registration)" >Services</button>
     </div>
     </ng-container>
   </div>
-  <div class="table-responsive"> 
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Sector</th>
-          <th scope="col">Industry</th>
-          <th scope="col">Public or Private</th>
-          <th scope="col">Address</th>
-          <th scope="col">Registration</th>
-          <th scope="col">Email</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <ng-container *ngFor="let Firm of listOfFirms | async; let i = index;">
-          <tr>
-            <th scope="row">{{i}}</th>
-            <td>{{Firm.Name}}</td>
-            <td>{{Firm.Sector}}</td>
-            <td>{{Firm.Industry}}</td>
-            <td>{{Firm.PublicPrivate}}</td>
-            <td>{{Firm.Address}}</td>
-            <td>{{Firm.Registration}}</td>
-            <td>{{Firm.Email}}</td>
-            <td><button type="button" class="btn btn-info" (click)="FirmServices(Firm.Registration)">Services</button></td>
-          </tr>
-        </ng-container>
-      </tbody>
-    </table>
-
-    
-  </div>
+ 
   <br>
  
